@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "2D adventure template",
+"productVersion": "0.1.1",
+"dataUrl": "2D Adventure WebGL.data.unityweb",
+"wasmCodeUrl": "2D Adventure WebGL.wasm.code.unityweb",
+"wasmFrameworkUrl": "2D Adventure WebGL.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.17f1"
+}
