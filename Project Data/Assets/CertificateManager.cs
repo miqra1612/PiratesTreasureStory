@@ -28,6 +28,6 @@ public class CertificateManager : MonoBehaviour
         teamName.text = ": " + gameData.teamName;
         DateTime ts = DateTime.Parse(gameData.startTime);
         DateTime te = DateTime.Parse(gameData.endTime);
-        timer.text = ": " + DateTime.Compare(te, ts) + " Minute";
+        timer.text = ": " +  te.Subtract(ts) + " Minute";
     }
 }

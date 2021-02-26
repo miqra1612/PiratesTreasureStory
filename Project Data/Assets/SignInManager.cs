@@ -8,7 +8,8 @@ public class SignInManager : MonoBehaviour
 
     public InputField signInPassword;
     public InputField teamName;
-
+    public GameObject signInPanel;
+    public GameObject failText;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,22 @@ public class SignInManager : MonoBehaviour
 
     public void SignIn()
     {
-        GameData.instance.teamName = teamName.text;
+        if(signInPassword.text != "")
+        {
+            GameData.instance.teamName = teamName.text;
+            signInPanel.SetActive(false);
+        }
+        else
+        {
+            failText.SetActive(true);
+            StartCoroutine(LogInFail());
+        }
+       
+    }
+
+    IEnumerator LogInFail()
+    {
+        yield return new WaitForSeconds(10);
+        failText.SetActive(false);
     }
 }

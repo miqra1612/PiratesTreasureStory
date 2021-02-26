@@ -9,6 +9,14 @@ public class GameData : MonoBehaviour
     public string startTime;
     public string endTime;
     public string teamName;
+    public double clueTime;
+
+    [Header("This part is for all clue buttons data")]
+    public bool clue1Open = false;
+    public bool clue2Open = false;
+    public bool clue3Open = false;
+    public bool clue4Open = false;
+    public bool clue5Open = false;
 
     public static GameData instance;
 
@@ -29,6 +37,20 @@ public class GameData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public void AddTime()
+    {
+        clueTime += 5;
+    }
+
+    public void CalculateFinishTime()
+    {
+        DateTime df = DateTime.Now;
+        DateTime de = df.AddMinutes(clueTime);
+        Debug.Log(de);
+        endTime = de.ToString();
         
     }
 }

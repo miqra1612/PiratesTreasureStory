@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour
 
     void OpenNextArea()
     {
-       
-
         for(int i = 0; i < gameData.gamePhase;i++)
         {
             hiddenMapButtons[i].SetActive(true);

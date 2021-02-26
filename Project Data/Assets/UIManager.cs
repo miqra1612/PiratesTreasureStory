@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public GameData gameData;
 
+   
+
     [Header("This area is for all hint and puzzle panel")]
     public Animator clue1;
     public Animator clue2;
@@ -127,7 +129,7 @@ public class UIManager : MonoBehaviour
 
         if (lastRoom)
         {
-            gameData.endTime = System.DateTime.Now.ToString();
+            gameData.CalculateFinishTime();
         }
         
         clue1.Play("Window Exit");
@@ -207,4 +209,5 @@ public class UIManager : MonoBehaviour
             correct4.Play("Window Exit");
         }
     }
+    
 }
