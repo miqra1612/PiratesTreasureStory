@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is used to control hint window inside the game room
+/// </summary>
+
 public enum Room
 {
     Room1,
@@ -23,6 +27,7 @@ public class HintManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Find game data object in the scene to read the data
         gameData = GameObject.FindGameObjectWithTag("data").GetComponent<GameData>();
         CheckingRoom();
     }
@@ -33,6 +38,7 @@ public class HintManager : MonoBehaviour
         
     }
 
+    // This function is used to check the activated status of the game hint inside each room
     void CheckingRoom()
     {
         if(room == Room.Room1)
@@ -57,6 +63,7 @@ public class HintManager : MonoBehaviour
         }
     }
 
+    //This function is used to save activated hint status to the game data
     void SaveClueStatus()
     {
         if (room == Room.Room1)
@@ -81,6 +88,7 @@ public class HintManager : MonoBehaviour
         }
     }
 
+    //This function will open a warning panel for the player before player activated the hint window
     public void OpenWarningPanel()
     {
         if (clueOpen)
@@ -93,6 +101,7 @@ public class HintManager : MonoBehaviour
         }
     }
 
+    //This function will open up the game hint window and add a penalty time for the player
     public void OpenClue()
     {
         gameData.AddTime();
@@ -102,11 +111,13 @@ public class HintManager : MonoBehaviour
         SaveClueStatus();
     }
 
+    //This function is used to close the hint window
     public void CloseHint()
     {
         cluePanel.Play("Window Exit");
     }
 
+    //This function is used to close the warning window
     public void CloseWarning()
     {
         clueWarning.Play("Window Exit");

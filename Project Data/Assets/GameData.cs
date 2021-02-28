@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
+/// <summary>
+/// This following script is used to save the data during the game. Some data that is saved are:
+/// game progress, start time, end time, team name, penalty time from using clue, and activated clue condition
+/// </summary>
 public class GameData : MonoBehaviour
 {
     public int gamePhase = 0;
@@ -30,7 +35,7 @@ public class GameData : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         
-
+        // read the begining time of the game
         startTime = DateTime.Now.ToString();
     }
 
@@ -39,12 +44,14 @@ public class GameData : MonoBehaviour
     {
         
     }
-
+    
+    //This funtion is used to add a penalty time to the game duration by 5 minutes every time user activate a clue panel
     public void AddTime()
     {
         clueTime += 5;
     }
 
+    // This function is used to read a finish time, add a penalty time to the finish time and write it in the end of the game
     public void CalculateFinishTime()
     {
         DateTime df = DateTime.Now;

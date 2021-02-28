@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This script is used to controll user sign in process to the game
+/// </summary>
+
 public class SignInManager : MonoBehaviour
 {
 
@@ -22,6 +26,7 @@ public class SignInManager : MonoBehaviour
         
     }
 
+    // This function read the password input from the user and allow user to begin the game when the password is correct
     public void SignIn()
     {
         if(signInPassword.text != "")
@@ -37,6 +42,7 @@ public class SignInManager : MonoBehaviour
        
     }
 
+    // This coroutine is used to give message for the player when there is problem during log in
     IEnumerator LogInFail()
     {
         yield return new WaitForSeconds(10);

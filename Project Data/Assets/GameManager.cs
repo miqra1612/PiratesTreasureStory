@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script controll the area in the map that open according to the player progress
+/// </summary>
+
 public class GameManager : MonoBehaviour
 {
 
@@ -11,6 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Find game data object in the scene to read the data
         gameData = GameObject.FindGameObjectWithTag("data").GetComponent<GameData>();
 
         OpenNextArea();
@@ -22,6 +27,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    // This function is used to Open the map area according to the player progression
     void OpenNextArea()
     {
         for(int i = 0; i < gameData.gamePhase;i++)
